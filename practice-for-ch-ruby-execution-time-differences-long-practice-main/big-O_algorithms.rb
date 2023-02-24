@@ -26,17 +26,17 @@ end
 # p my_min(list)  # =>  -5 Linear
 
 
-def largest_contiguous_subsum(list)
-  arr_of_subarr = []
-  (0...list.length).each do |i|
-    (i...list.length).each do |j|
-      arr_of_subarr << list[i..j]
-    end
-  end
-  sums = []
-  arr_of_subarr.each { |el| sums << el.sum }
-  sums.max
-end
+# def largest_contiguous_subsum(list)
+#   arr_of_subarr = []
+#   (0...list.length).each do |i|
+#     (i...list.length).each do |j|
+#       arr_of_subarr << list[i..j]
+#     end
+#   end
+#   sums = []
+#   arr_of_subarr.each { |el| sums << el.sum }
+#   sums.max
+# end
 
 
 # list = [5, 3, -7]
@@ -57,15 +57,31 @@ end
 # list = [-5, -1, -3]
 # p largest_contiguous_subsum(list) # => -1 (from [-1])
 
-def largest_contiguous_subsum(list)
-  hash = Hash.new { |hash, k| hash[k] = [] }
-  list.each do |i|
-    
-  end
 
+# Let's make a better version. Write a new function using O(n) time with O(1)
+# memory. Keep a running tally of the largest sum. To accomplish this efficient
+# space complexity, consider using two variables. One variable should track the
+# largest sum so far and another to track the current sum. The rest is left to
+# you.
+
+
+def largest_contiguous_subsum(list)
+  res = []
+  largest_sum = list[0]
+  current_sum = list[0]
+  (1...list.length).each do |i|
+    current_sum += list[i]
+    if largest_sum < current_sum
+      largest_sum = current_sum
+    end
+    if current_sum < 0 
+      current_sum = 0
+    end
+  end
+  largest_sum
 end
 
-list = [5, 3, -7]
+list = [3, -7, 5]
 p largest_contiguous_subsum(list) # => 8 Quadratic 
 
 # possible sub-sums
