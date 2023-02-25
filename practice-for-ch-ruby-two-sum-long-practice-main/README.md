@@ -17,10 +17,10 @@ two_sum?(arr, 10) # => should be false
 
 By the end of this practice, you should be able to
 
-* Reason about a difficult problem and think of ways to solve it
-* Determine and explain the time and space complexity of a method
-* Recognize when time or space complexity can be improved
-* Know some common tricks to improve time or space complexity
+- Reason about a difficult problem and think of ways to solve it
+- Determine and explain the time and space complexity of a method
+- Recognize when time or space complexity can be improved
+- Know some common tricks to improve time or space complexity
 
 **Before you start coding anything, talk it over with your partner. Sketch out
 on paper how you'd approach this problem. What would be the running time of your
@@ -70,8 +70,8 @@ sorted data sets. What are some such algorithms you know?
 ## Hash Map
 
 Finally, it's time to bust out the big guns: a hash map. Remember, a hash map
-has *O(1)* `#set` and *O(1)* `#get`, so you can build a hash out of each of the
-`n` elements in your array in *O(n)* time. That hash map prevents you from
+has _O(1)_ `#set` and _O(1)_ `#get`, so you can build a hash out of each of the
+`n` elements in your array in _O(n)_ time. That hash map prevents you from
 having to repeatedly find values in the array; now you can just look them up
 instantly.
 
